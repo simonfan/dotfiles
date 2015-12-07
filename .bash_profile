@@ -1,3 +1,8 @@
+# load .bashrc
+if [ -f ~/.bashrc ]; then
+    . ~/.bashrc
+fi
+
 # prompt
 # Username@hostname, the date and time, and the current working directory
 #export PS1='\u \D{%H:%M:%S} \w φ '
@@ -47,6 +52,8 @@ alias less='less -i'
 alias jfmt='python -mjson.tool'
 
 alias ..='cd ..'
+alias ...='cd ../../'
+alias ....='cd ../../../'
 
 # make dir and cd into it.
 md () { mkdir -p "$@" && cd "$@"; }
@@ -123,5 +130,5 @@ alias setdocker_env='eval "$(docker-machine env default)"'
 alias own-npm='sudo chown -R $(whoami) ~/.npm'
 
 # aws
-complete -C '/usr/local/aws/bin/aws_completer' aws
-export PATH=/usr/local/aws/bin:$PATH
+complete -C '/usr/local/bin/aws_completer' aws
+export PATH=/usr/local/bin:$PATH
